@@ -20,6 +20,6 @@ public partial class EditProfile : System.Web.UI.Page
         profile.courseNumber = CourseNumber.Text;
         profile.courseDescription = CourseDescription.Text;
         Session["Profile"] = profile;
-        Response.Redirect("ViewProfile.aspx");
+        Response.Redirect("~/ViewProfile.aspx");
     }
 }

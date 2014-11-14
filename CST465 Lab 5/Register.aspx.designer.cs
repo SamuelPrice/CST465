@@ -10,7 +10,6 @@
 namespace CST465_Lab_5
 {
 
-
     public partial class WebForm2
     {
     }

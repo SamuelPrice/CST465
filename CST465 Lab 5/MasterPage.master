@@ -12,6 +12,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSourceID" StartingNodeUrl="~/Default.aspx" ShowStartingNode="false" />
+        <asp:Menu runat="server" ID="menu" Orientation="Horizontal" DataSourceID="SiteMapDataSourceID" />
+        <asp:SiteMapPath runat="server" PathSeparator=" / " />
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
