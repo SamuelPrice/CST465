@@ -77,10 +77,10 @@
     <Compile Include="Account\EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AppCode\ProfileData.cs" />
     <Compile Include="MasterPage.master.designer.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
     </Compile>
-    <Compile Include="Old_App_Code\ProfileData.cs" />
     <Compile Include="Account\EditProfile.aspx.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,7 +89,7 @@
       <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProfileData.cs" />
+    <Compile Include="AppCode\ProfilePersistance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account\ViewProfile.aspx.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
