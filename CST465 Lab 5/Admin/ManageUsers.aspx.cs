@@ -12,10 +12,10 @@ namespace CST465_Lab_5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            foreach (string role in Roles.GetAllRoles())
-            {
-                RoleDropDownList.Items.Add(new ListItem(role));
-            }
+            //foreach (string role in Roles.GetAllRoles())
+            //{
+            //    RoleDropDownList.Items.Add(new ListItem(role));
+            //}
         }
 
         protected void CreateRoleButton_Click(object sender, EventArgs e)
