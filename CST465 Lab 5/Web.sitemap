@@ -11,6 +11,7 @@
       <siteMapNode url="~/Account/EditProfile.aspx" title="Edit Profile" />
       <siteMapNode url="~/Account/Logout.aspx" title="Logout"/>
     </siteMapNode>
+    <siteMapNode url="~/Admin/ManageUsers.aspx" title="Manage Users" />
     
   </siteMapNode>
 </siteMap>

@@ -20,7 +20,7 @@ public partial class EditProfile : System.Web.UI.Page
         profile.coursePrefix = CoursePrefix.Text;
         profile.courseNumber = CourseNumber.Text;
         profile.courseDescription = CourseDescription.Text;
-        Session["Profile"] = profile;
+        ProfilePersistance.SaveProfile(profile);
         Response.Redirect("~/ViewProfile.aspx");
     }
 }

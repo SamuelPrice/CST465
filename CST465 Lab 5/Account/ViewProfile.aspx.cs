@@ -10,7 +10,7 @@ public partial class ViewProfile : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        ProfileData profile = (ProfileData)Session["Profile"];
+        ProfileData profile = ProfilePersistance.LoadProfile();
         if (profile != null)
         {
             Name.Text = profile.name;

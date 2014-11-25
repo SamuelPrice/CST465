@@ -21,14 +21,13 @@ namespace CST465_Lab_5
         protected void CreateRoleButton_Click(object sender, EventArgs e)
         {
             if (!Roles.RoleExists(RoleNameTextBox.Text))
-            {
                 Roles.CreateRole(RoleNameTextBox.Text);
-            }
         }
 
         protected void AssociateUserButton_Click(object sender, EventArgs e)
         {
-            Roles.AddUserToRole(UserDropDownList.SelectedValue, RoleDropDownList.SelectedValue);
+            if (!Roles.IsUserInRole(UserDropDownList.SelectedValue,RoleDropDownList.SelectedValue))
+                Roles.AddUserToRole(UserDropDownList.SelectedValue, RoleDropDownList.SelectedValue);
         }
     }
 }
