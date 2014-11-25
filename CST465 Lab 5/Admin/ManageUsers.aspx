@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Manage Users</h1>
-    <asp:SqlDataSource ID="UsersDataSource" ConnectionString="<%$ ConnectionStrings:DB %>" SelectCommandType="Text" SelectCommand="SELECT UserId FROM UserProfile" runat="server" />
+    <asp:SqlDataSource ID="UsersDataSource" ConnectionString="<%$ ConnectionStrings:DB %>" SelectCommandType="Text" SelectCommand="SELECT UserName FROM aspnet_Users" runat="server" />
     <fieldset>
         <legend>Add Roles</legend>
         <asp:Label runat="server" AssociatedControlID="RoleNameTextBox">Role Name</asp:Label>
@@ -14,10 +14,10 @@
     <fieldset>
         <legend>Role Membership</legend>
         <asp:Label runat="server" AssociatedControlID="UserDropDownList">User</asp:Label>
-        <asp:DropDownList runat="server" ID="UserDropDownList" DataSourceID="UsersDataSource" />
+        <asp:DropDownList runat="server" ID="UserDropDownList" DataValueField="UserName" DataSourceID="UsersDataSource" />
         <br />
         <asp:Label runat="server" AssociatedControlID="RoleDropDownList">Role</asp:Label>
-        <asp:DropDownList runat="server" ID="RoleDropDownList" />
+        <asp:DropDownList runat="server" ID="RoleDropDownList"/>
         <br />
         <asp:Button runat="server" ID="AssociateUserButton" Text="Associate User" OnClick="AssociateUserButton_Click" />
     </fieldset>
