@@ -13,7 +13,7 @@ public partial class EditProfile : System.Web.UI.Page
         ProfileData profile = new ProfileData();
         profile.name = Name.Text;
         profile.email = Email.Text;
-        profile.userType = UserType.Text;
+        profile.userType = UserType.SelectedItem.Text;
         profile.hobby = Hobby.Text;
         profile.band = Band.Text;
         profile.biography = Biography.Text;
@@ -21,6 +21,6 @@ public partial class EditProfile : System.Web.UI.Page
         profile.courseNumber = CourseNumber.Text;
         profile.courseDescription = CourseDescription.Text;
         ProfilePersistance.SaveProfile(profile);
-        Response.Redirect("~/ViewProfile.aspx");
+        Response.Redirect("~/Account/ViewProfile.aspx");
     }
 }

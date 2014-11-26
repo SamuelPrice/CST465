@@ -22,8 +22,17 @@ namespace CST465_Lab_5
             command.Parameters.AddWithValue("@Hobbies", profile.hobby);
             command.Parameters.AddWithValue("@FavoriteBands", profile.band);
             command.Parameters.AddWithValue("@Biography", profile.biography);
+
+            SqlCommand courseCommand = new SqlCommand("Courses_InsertUpdate", connection);
+            courseCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            courseCommand.Parameters.AddWithValue("@UserId", Membership.GetUser().ProviderUserKey.ToString());
+            courseCommand.Parameters.AddWithValue("@Prefix", profile.coursePrefix);
+            courseCommand.Parameters.AddWithValue("@Number", profile.courseNumber);
+            courseCommand.Parameters.AddWithValue("@Description", profile.courseDescription);
+
             connection.Open();
             command.ExecuteNonQuery();
+            courseCommand.ExecuteNonQuery();
             connection.Close();
         }
 
@@ -32,6 +41,7 @@ namespace CST465_Lab_5
             ProfileData profile = new ProfileData();
             SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["DB"].ConnectionString);
             SqlCommand command = new SqlCommand("SELECT Name, Email, UserType, Hobbies, FavoriteBands, Biography FROM UserProfile WHERE UserId = '" + Membership.GetUser().ProviderUserKey.ToString() + "'", connection);
+            SqlCommand courseCommand = new SqlCommand("SELECT Prefix, Number, Description FROM Courses WHERE UserId = '" + Membership.GetUser().ProviderUserKey.ToString() + "'", connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             while(reader.Read())
@@ -44,6 +54,16 @@ namespace CST465_Lab_5
                 profile.biography = reader["Biography"].ToString();
             }
             reader.Close();
+            
+            SqlDataReader courseReader = courseCommand.ExecuteReader();
+            while (courseReader.Read())
+            {
+                profile.coursePrefix = courseReader["Prefix"].ToString();
+                profile.courseNumber = courseReader["Number"].ToString();
+                profile.courseDescription = courseReader["Description"].ToString();
+            }
+            courseReader.Close();
+
             connection.Close();
             return profile;
         }
