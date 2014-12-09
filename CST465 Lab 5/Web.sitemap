@@ -3,7 +3,8 @@
   <siteMapNode url="~/Default.aspx" title="Home" >
     <siteMapNode url="~/About.aspx" title="About" />
     <siteMapNode url="~/Forum.aspx" title="Forum" />
-    <siteMapNode url="~/Tests.aspx" title="Tests" />   
+    <siteMapNode url="~/Tests.aspx" title="Tests" />
+    <siteMapNode url="~/Announcements.aspx" title="Anouncements" />
     <siteMapNode url="~/Register.aspx" title="Register" />
     <siteMapNode url="~/Login.aspx" title="Login" />
     <siteMapNode url="~/Account/Account.aspx" title="Account">

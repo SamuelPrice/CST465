@@ -11,6 +11,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ScriptPath="~/jquery-2.1.1.min.js">
+            
+        </asp:ScriptManager>
     <div>
         <asp:SiteMapDataSource runat="server" ID="SiteMapDataSourceID" StartingNodeUrl="~/Default.aspx" ShowStartingNode="false" />
         <asp:Menu runat="server" ID="menu" Orientation="Horizontal" DataSourceID="SiteMapDataSourceID" />
