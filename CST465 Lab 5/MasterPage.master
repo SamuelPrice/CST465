@@ -3,16 +3,18 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server" id="header">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <link href="~/StyleSheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager runat="server" ScriptPath="~/jquery-2.1.1.min.js">
-            
+        <asp:ScriptManager ID="ScriptManager" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/jquery-2.1.1.min.js" />
+            </Scripts>
         </asp:ScriptManager>
     <div>
         <asp:SiteMapDataSource runat="server" ID="SiteMapDataSourceID" StartingNodeUrl="~/Default.aspx" ShowStartingNode="false" />

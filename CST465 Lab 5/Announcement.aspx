@@ -14,6 +14,9 @@
             <%# Eval("Name") %>:
             <%# Eval("Comment") %>
             <br />
+            <%# Eval("DatePosted") %>
+            <br />
+            <br />
         </ItemTemplate>
     </asp:Repeater>
     <br />

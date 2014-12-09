@@ -28,7 +28,7 @@ namespace CST465_Lab_5
             reader.Close();
             connection.Close();
 
-            SqlDataSource dataSource = new SqlDataSource(WebConfigurationManager.ConnectionStrings["DB"].ConnectionString, "SELECT Name, Comment FROM Comments JOIN UserProfile ON UserProfile.UserId=Comments.UserId WHERE AnnouncementId=@Id");
+            SqlDataSource dataSource = new SqlDataSource(WebConfigurationManager.ConnectionStrings["DB"].ConnectionString, "SELECT Name, Comment, DatePosted FROM Comments JOIN UserProfile ON UserProfile.UserId=Comments.UserId WHERE AnnouncementId=@Id");
             dataSource.SelectParameters.Add("Id", Request.QueryString.Get("Announcement"));
 
             Repeater.DataSource = dataSource;
