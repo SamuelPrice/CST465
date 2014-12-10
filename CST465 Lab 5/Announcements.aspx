@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Announcements" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Announcements.aspx.cs" Inherits="CST465_Lab_5.WebForm10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
-        //$(document).ready(function () { $('#FirstDiv').hide(); $('#AnnouncementDiv').show();});
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript" runat="server">
+            //$(document).ready(function () { $('#FirstDiv').hide(); $('#AnnouncementDiv').show();});
+    </script>
     <h1>Announcements</h1>
 
     <asp:SqlDataSource ID="Data" ConnectionString="<%$ ConnectionStrings:DB %>" SelectCommandType ="Text" SelectCommand="SELECT AnnouncementId, Title, DatePosted FROM Announcements" runat="server" />
