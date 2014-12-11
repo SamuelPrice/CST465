@@ -29,6 +29,8 @@ namespace CST465_Lab_5
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
+
+            updatePanel.DataBind();
         }
 
         protected void TitleText_Click(object sender, EventArgs e)

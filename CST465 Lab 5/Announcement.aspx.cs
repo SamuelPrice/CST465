@@ -32,22 +32,22 @@ namespace CST465_Lab_5
             dataSource.SelectParameters.Add("Id", Request.QueryString.Get("Announcement"));
 
             Repeater.DataSource = dataSource;
-            Repeater.DataBind();
-
-            
+            Repeater.DataBind();        
         }
 
         protected void PostButton_Click(object sender, EventArgs e)
         {
             TextBox commentTextBox = (TextBox)LoginView.FindControl("CommentTextBox");
             SqlConnection connection = new SqlConnection(WebConfigurationManager.ConnectionStrings["DB"].ConnectionString);
-            SqlCommand command = new SqlCommand("INSERT INTO Comments VALUES (@UserId, @Comment, @AnnouncementId)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Comments (UserId, Comment, AnnouncementId) VALUES (@UserId, @Comment, @AnnouncementId)", connection);
             connection.Open();
             command.Parameters.AddWithValue("@UserId", Membership.GetUser().ProviderUserKey.ToString());
             command.Parameters.AddWithValue("@Comment", commentTextBox.Text);
             command.Parameters.AddWithValue("@AnnouncementId", Request.QueryString.Get("Announcement"));
             command.ExecuteNonQuery();
             connection.Close();
+
+            updatePanel.DataBind();
         }
     }
 }
